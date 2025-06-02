@@ -27,7 +27,7 @@
     [
       #rect(
         width: 100%,
-        height: 6em,
+        // height: 6em,
         radius: 8pt,
         fill: rgb("#f0f0f0"),
         stroke: 1pt + rgb("#cccccc"),
