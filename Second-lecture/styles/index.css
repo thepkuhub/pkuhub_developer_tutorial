@@ -1,0 +1,664 @@
+/* Apple Official Design System for Slidev */
+
+/* 导入苹果官方字体 */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+/* 苹果官方设计系统变量 */
+:root {
+  /* 苹果官方色彩系统 */
+  --apple-blue: #007aff;
+  --apple-blue-light: #5ac8fa;
+  --apple-blue-dark: #0051d5;
+  --apple-gray: #8e8e93;
+  --apple-gray-2: #aeaeb2;
+  --apple-gray-3: #c7c7cc;
+  --apple-gray-4: #d1d1d6;
+  --apple-gray-5: #e5e5ea;
+  --apple-gray-6: #f2f2f7;
+  --apple-label: #000000;
+  --apple-label-secondary: #3c3c43;
+  --apple-label-tertiary: #3c3c4399;
+  --apple-label-quaternary: #3c3c432e;
+  --apple-fill: #78788033;
+  --apple-fill-secondary: #78788028;
+  --apple-fill-tertiary: #7676801e;
+  --apple-fill-quaternary: #74748014;
+  --apple-background: #ffffff;
+  --apple-background-secondary: #f2f2f7;
+  --apple-background-tertiary: #ffffff;
+  --apple-separator: #3c3c4349;
+  --apple-separator-opaque: #c6c6c8;
+  --apple-link: #007aff;
+  --apple-system-red: #ff3b30;
+  --apple-system-orange: #ff9500;
+  --apple-system-yellow: #ffcc00;
+  --apple-system-green: #34c759;
+  --apple-system-mint: #00c7be;
+  --apple-system-teal: #30b0c7;
+  --apple-system-cyan: #32d74b;
+  --apple-system-blue: #007aff;
+  --apple-system-indigo: #5856d6;
+  --apple-system-purple: #af52de;
+  --apple-system-pink: #ff2d92;
+  --apple-system-brown: #a2845e;
+
+  /* 暗色模式变量 */
+  --apple-label-dark: #ffffff;
+  --apple-label-secondary-dark: #ebebf599;
+  --apple-label-tertiary-dark: #ebebf54c;
+  --apple-label-quaternary-dark: #ebebf52e;
+  --apple-fill-dark: #7878805c;
+  --apple-fill-secondary-dark: #78788052;
+  --apple-fill-tertiary-dark: #7676803d;
+  --apple-fill-quaternary-dark: #74748033;
+  --apple-background-dark: #000000;
+  --apple-background-secondary-dark: #1c1c1e;
+  --apple-background-tertiary-dark: #2c2c2e;
+  --apple-separator-dark: #54545899;
+  --apple-separator-opaque-dark: #38383a;
+
+  /* Slidev 主题变量 */
+  --slidev-theme-primary: var(--apple-blue);
+  --slidev-theme-secondary: var(--apple-blue-light);
+
+  /* 苹果官方阴影系统 */
+  --apple-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --apple-shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --apple-shadow-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  --apple-shadow-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  --apple-shadow-5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+  /* 苹果官方圆角系统 */
+  --apple-radius-small: 6px;
+  --apple-radius-medium: 12px;
+  --apple-radius-large: 16px;
+  --apple-radius-xlarge: 24px;
+
+  /* 苹果官方间距系统 */
+  --apple-spacing-xs: 4px;
+  --apple-spacing-sm: 8px;
+  --apple-spacing-md: 16px;
+  --apple-spacing-lg: 24px;
+  --apple-spacing-xl: 32px;
+  --apple-spacing-2xl: 48px;
+  --apple-spacing-3xl: 64px;
+}
+
+/* 苹果官方字体系统 */
+html {
+  font-family: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* 苹果官方字体大小系统 */
+.apple-text-large-title {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0.37px;
+}
+
+.apple-text-title-1 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0.36px;
+}
+
+.apple-text-title-2 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: 0.35px;
+}
+
+.apple-text-title-3 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.38px;
+}
+
+.apple-text-headline {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.41px;
+}
+
+.apple-text-body {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.41px;
+}
+
+.apple-text-callout {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.31;
+  letter-spacing: -0.32px;
+}
+
+.apple-text-subhead {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -0.24px;
+}
+
+.apple-text-footnote {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.38;
+  letter-spacing: -0.08px;
+}
+
+.apple-text-caption-1 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0px;
+}
+
+.apple-text-caption-2 {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.36;
+  letter-spacing: 0.07px;
+}
+
+/* Slidev 布局基础样式 */
+.slidev-layout {
+  @apply px-16 py-12;
+  background: var(--apple-background);
+  color: var(--apple-label);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  h1 {
+    @apply apple-text-large-title font-bold mb-8;
+    background: linear-gradient(135deg, var(--apple-blue) 0%, var(--apple-blue-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--apple-spacing-xl);
+  }
+
+  h2 {
+    @apply apple-text-title-1 font-semibold mb-6;
+    color: var(--apple-label);
+    margin-bottom: var(--apple-spacing-lg);
+  }
+
+  h3 {
+    @apply apple-text-title-2 font-medium mb-4;
+    color: var(--apple-label-secondary);
+    margin-bottom: var(--apple-spacing-md);
+  }
+
+  h4 {
+    @apply apple-text-title-3 font-medium mb-3;
+    color: var(--apple-label-secondary);
+    margin-bottom: var(--apple-spacing-sm);
+  }
+
+  p {
+    @apply apple-text-body;
+    color: var(--apple-label-secondary);
+    margin: var(--apple-spacing-md) 0;
+    line-height: 1.6;
+  }
+
+  ul,
+  ol {
+    @apply apple-text-body;
+    color: var(--apple-label-secondary);
+    padding-left: var(--apple-spacing-lg);
+    margin: var(--apple-spacing-md) 0;
+  }
+
+  li {
+    margin: var(--apple-spacing-sm) 0;
+    line-height: 1.5;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--apple-blue);
+    padding-left: var(--apple-spacing-md);
+    padding-top: var(--apple-spacing-sm);
+    padding-bottom: var(--apple-spacing-sm);
+    margin: var(--apple-spacing-lg) 0;
+    color: var(--apple-label-tertiary);
+    font-style: italic;
+    background: var(--apple-fill);
+    border-radius: var(--apple-radius-small);
+  }
+
+  code {
+    font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+    font-size: 14px;
+    padding: 2px 6px;
+    background: var(--apple-fill);
+    border-radius: var(--apple-radius-small);
+    color: var(--apple-system-purple);
+    font-weight: 500;
+  }
+
+  pre {
+    font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+    padding: var(--apple-spacing-md);
+    background: var(--apple-background-secondary);
+    border-radius: var(--apple-radius-medium);
+    box-shadow: var(--apple-shadow-1);
+    overflow-x: auto;
+    margin: var(--apple-spacing-lg) 0;
+  }
+}
+
+/* 苹果官方布局样式 */
+.slidev-layout.cover {
+  @apply h-full flex flex-col justify-center items-center text-center;
+  background: linear-gradient(135deg, var(--apple-background) 0%, var(--apple-background-secondary) 100%);
+
+  h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--apple-spacing-xl);
+    background: linear-gradient(135deg, var(--apple-blue) 0%, var(--apple-system-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--apple-label-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--apple-spacing-2xl);
+  }
+}
+
+.slidev-layout.intro {
+  @apply h-full flex flex-col justify-center;
+  background: linear-gradient(135deg, var(--apple-blue) 0%, var(--apple-system-indigo) 100%);
+  color: white;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    background: none;
+    -webkit-text-fill-color: white;
+    margin-bottom: var(--apple-spacing-lg);
+  }
+
+  p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+  }
+}
+
+.slidev-layout.statement {
+  @apply h-full flex flex-col justify-center items-center text-center;
+  background: var(--apple-background);
+
+  h1 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--apple-label);
+    background: none;
+    -webkit-text-fill-color: var(--apple-label);
+  }
+}
+
+.slidev-layout.two-cols {
+  @apply grid grid-cols-2 gap-16 h-full items-center;
+}
+
+.slidev-layout.image-right {
+  @apply grid grid-cols-2 gap-16 h-full items-center;
+}
+
+/* 苹果官方按钮系统 */
+.apple-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: var(--apple-radius-large);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-button-primary {
+  background: var(--apple-blue);
+  color: white;
+  box-shadow: var(--apple-shadow-2);
+}
+
+.apple-button-primary:hover {
+  background: var(--apple-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--apple-shadow-3);
+}
+
+.apple-button-secondary {
+  background: var(--apple-fill);
+  color: var(--apple-blue);
+  border: 1px solid var(--apple-separator);
+}
+
+.apple-button-secondary:hover {
+  background: var(--apple-fill-secondary);
+  transform: translateY(-1px);
+}
+
+.apple-button-large {
+  padding: 16px 32px;
+  font-size: 20px;
+  border-radius: var(--apple-radius-xlarge);
+}
+
+/* 苹果官方卡片系统 */
+.apple-card {
+  background: var(--apple-background-tertiary);
+  border-radius: var(--apple-radius-large);
+  padding: var(--apple-spacing-lg);
+  box-shadow: var(--apple-shadow-1);
+  border: 1px solid var(--apple-separator);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.apple-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--apple-shadow-3);
+}
+
+.apple-card-title {
+  @apply apple-text-headline;
+  color: var(--apple-label);
+  margin-bottom: var(--apple-spacing-sm);
+}
+
+.apple-card-description {
+  @apply apple-text-body;
+  color: var(--apple-label-secondary);
+  line-height: 1.5;
+}
+
+/* 苹果官方图片样式 */
+img {
+  border-radius: var(--apple-radius-medium);
+  box-shadow: var(--apple-shadow-1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--apple-shadow-2);
+}
+
+/* 苹果官方动画系统 */
+.slidev-vclick-target {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(24px) scale(0.95);
+}
+
+/* 苹果官方过渡效果 */
+.slidev-transition-fade-out-enter-active,
+.slidev-transition-fade-out-leave-active {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slidev-transition-fade-out-enter-from,
+.slidev-transition-fade-out-leave-to {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+}
+
+.slidev-transition-slide-left-enter-active,
+.slidev-transition-slide-left-leave-active {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slidev-transition-slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(40px) scale(0.95);
+}
+
+.slidev-transition-slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-40px) scale(0.95);
+}
+
+/* 苹果官方表格样式 */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: var(--apple-spacing-lg) 0;
+  background: var(--apple-background-tertiary);
+  border-radius: var(--apple-radius-medium);
+  overflow: hidden;
+  box-shadow: var(--apple-shadow-1);
+}
+
+thead {
+  background: var(--apple-fill);
+}
+
+th {
+  padding: var(--apple-spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--apple-label);
+  border-bottom: 1px solid var(--apple-separator);
+}
+
+td {
+  padding: var(--apple-spacing-md);
+  color: var(--apple-label-secondary);
+  border-bottom: 1px solid var(--apple-separator);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--apple-fill);
+}
+
+/* 暗色模式适配 */
+html.dark {
+  .slidev-layout {
+    background: var(--apple-background-dark);
+    color: var(--apple-label-dark);
+
+    h1 {
+      background: linear-gradient(135deg, var(--apple-blue-light) 0%, var(--apple-system-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h2,
+    h3,
+    h4 {
+      color: var(--apple-label-dark);
+    }
+
+    p,
+    ul,
+    ol,
+    li {
+      color: var(--apple-label-secondary-dark);
+    }
+
+    blockquote {
+      border-left-color: var(--apple-blue-light);
+      background: var(--apple-fill-dark);
+      color: var(--apple-label-tertiary-dark);
+    }
+
+    code {
+      background: var(--apple-fill-dark);
+      color: var(--apple-system-purple);
+    }
+
+    pre {
+      background: var(--apple-background-secondary-dark);
+    }
+  }
+
+  .slidev-layout.cover {
+    background: linear-gradient(135deg, var(--apple-background-dark) 0%, var(--apple-background-secondary-dark) 100%);
+  }
+
+  .apple-card {
+    background: var(--apple-background-tertiary-dark);
+    border-color: var(--apple-separator-dark);
+  }
+
+  .apple-card-title {
+    color: var(--apple-label-dark);
+  }
+
+  .apple-card-description {
+    color: var(--apple-label-secondary-dark);
+  }
+
+  .apple-button-secondary {
+    background: var(--apple-fill-dark);
+    border-color: var(--apple-separator-dark);
+    color: var(--apple-blue-light);
+  }
+
+  table {
+    background: var(--apple-background-tertiary-dark);
+  }
+
+  thead {
+    background: var(--apple-fill-dark);
+  }
+
+  th {
+    color: var(--apple-label-dark);
+    border-bottom-color: var(--apple-separator-dark);
+  }
+
+  td {
+    color: var(--apple-label-secondary-dark);
+    border-bottom-color: var(--apple-separator-dark);
+  }
+
+  tbody tr:hover {
+    background: var(--apple-fill-dark);
+  }
+}
+
+/* 苹果官方工具类 */
+.apple-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.apple-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.apple-glass-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.apple-gradient-blue {
+  background: linear-gradient(135deg, var(--apple-blue) 0%, var(--apple-blue-light) 100%);
+}
+
+.apple-gradient-purple {
+  background: linear-gradient(135deg, var(--apple-system-purple) 0%, var(--apple-system-pink) 100%);
+}
+
+.apple-gradient-green {
+  background: linear-gradient(135deg, var(--apple-system-green) 0%, var(--apple-system-mint) 100%);
+}
+
+.apple-gradient-orange {
+  background: linear-gradient(135deg, var(--apple-system-orange) 0%, var(--apple-system-yellow) 100%);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .slidev-layout {
+    @apply px-8 py-8;
+  }
+
+  .slidev-layout.cover h1 {
+    font-size: 42px;
+  }
+
+  .slidev-layout.intro h1 {
+    font-size: 36px;
+  }
+
+  .slidev-layout.statement h1 {
+    font-size: 32px;
+  }
+
+  .slidev-layout.two-cols,
+  .slidev-layout.image-right {
+    @apply grid-cols-1 gap-8;
+  }
+}
+
+/* 苹果官方无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  :root {
+    --apple-blue: #0000ff;
+    --apple-label: #000000;
+    --apple-background: #ffffff;
+  }
+
+  html.dark {
+    --apple-blue-light: #66b3ff;
+    --apple-label-dark: #ffffff;
+    --apple-background-dark: #000000;
+  }
+}
