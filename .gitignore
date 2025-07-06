@@ -1,1 +1,72 @@
 *.pdf
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+.slidev/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary folders
+tmp/
+temp/
+
+# md文档
+advanced/
+custom/
+formatting/
+interactive/
+examples/
+patterns/
+pages/
+
+layout-examples.md
+content-container-example.md
+layout-components-example.md
+
+templates/
+
+
+package-lock.json
+pnpm-lock.yaml
+
+*.pdf
+
+slides.md
+
+.prettierrc
+
+*.tar.gz
