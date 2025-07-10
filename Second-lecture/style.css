@@ -1,0 +1,233 @@
+/* 苹果风格主题样式 */
+
+/* 导入字体 */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* 全局样式 */
+:root {
+  --apple-blue: #0071e3;
+  --apple-gray: #86868b;
+  --apple-light-gray: #f5f5f7;
+  --apple-dark-gray: #1d1d1f;
+  --apple-green: #4cd964;
+  --apple-red: #ff3b30;
+  --apple-yellow: #ffcc00;
+  --apple-purple: #5856d6;
+  --apple-pink: #ff2d55;
+  --apple-orange: #ff9500;
+
+  --slidev-theme-primary: var(--apple-blue);
+}
+
+html {
+  font-family:
+    "Inter",
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 幻灯片基础样式 */
+.slidev-layout {
+  @apply px-14 py-10;
+
+  h1 {
+    @apply text-4xl font-semibold mb-6;
+    background: linear-gradient(to right, #527496, #34aadc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  h2 {
+    @apply text-3xl font-medium mb-4;
+  }
+
+  h3 {
+    @apply text-2xl font-medium mb-3;
+  }
+
+  h4 {
+    @apply text-xl font-medium mb-2;
+  }
+
+  p {
+    @apply my-4 leading-6;
+  }
+
+  ul,
+  ol {
+    @apply pl-6 my-4;
+  }
+
+  li {
+    @apply my-2;
+  }
+
+  blockquote {
+    @apply border-l-4 border-gray-300 pl-4 py-2 my-4 text-gray-600 italic;
+  }
+
+  code {
+    @apply px-1.5 py-0.5 rounded-md bg-gray-100 text-sm font-mono;
+  }
+
+  pre {
+    @apply p-4 rounded-lg shadow-md;
+  }
+}
+
+/* 特定布局样式 */
+.slidev-layout.cover,
+.slidev-layout.intro {
+  @apply h-full grid place-items-center;
+
+  h1 {
+    @apply text-5xl font-bold mb-4;
+  }
+}
+
+.slidev-layout.statement {
+  @apply h-full grid place-items-center text-center;
+
+  h1 {
+    @apply text-4xl font-bold leading-tight;
+  }
+}
+
+/* 按钮样式 */
+button,
+.slidev-button {
+  @apply rounded-full px-4 py-2 font-medium transition-all duration-300 ease-in-out;
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+  @apply shadow-md hover:shadow-lg;
+  @apply transform hover:-translate-y-0.5;
+}
+
+/* 卡片样式 */
+.card {
+  @apply rounded-2xl bg-white p-6 shadow-lg;
+  @apply border border-gray-100;
+  @apply transition-all duration-300 ease-in-out;
+  @apply hover:shadow-xl hover:scale-[1.02];
+}
+
+/* 动画过渡 */
+.slidev-vclick-target {
+  transition: all 500ms ease;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* 自定义过渡效果 */
+.slidev-transition-fade-out-enter-active,
+.slidev-transition-fade-out-leave-active {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.slidev-transition-fade-out-enter-from,
+.slidev-transition-fade-out-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.slidev-transition-slide-left-enter-active,
+.slidev-transition-slide-left-leave-active {
+  transition:
+    opacity 0.3s,
+    transform 0.5s;
+}
+
+.slidev-transition-slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.slidev-transition-slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+/* 暗色模式适配 */
+html.dark {
+  --text-color: #f5f5f7;
+  --text-color-secondary: #86868b;
+  .slidev-layout {
+    color: var(--text-color);
+
+    h1 {
+      background: linear-gradient(to right, #5ac8fa, #34aadc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    blockquote {
+      @apply border-gray-600 text-gray-400;
+    }
+
+    code {
+      @apply bg-gray-800;
+    }
+  }
+
+  .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+}
+
+/* 图片样式 */
+img {
+  @apply rounded-xl;
+}
+
+/* 表格样式 */
+table {
+  @apply w-full border-collapse my-4;
+
+  thead {
+    @apply bg-gray-100 dark:bg-gray-800;
+
+    th {
+      @apply px-4 py-2 text-left font-medium;
+    }
+  }
+
+  tbody {
+    tr {
+      @apply border-b border-gray-200 dark:border-gray-700;
+
+      &:last-child {
+        @apply border-0;
+      }
+    }
+
+    td {
+      @apply px-4 py-2;
+    }
+  }
+}
+
+/* 自定义组件样式 */
+.counter {
+  @apply flex items-center justify-center;
+  @apply text-2xl font-bold;
+  @apply bg-gradient-to-r from-blue-500 to-cyan-500;
+  @apply text-white rounded-full w-16 h-16;
+  @apply shadow-lg;
+}

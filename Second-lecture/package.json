@@ -1,0 +1,22 @@
+{
+  "name": "slidev-customized-ethan",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open ",
+    "export": "slidev export",
+    "start": "slidev --open --port 3030",
+    "preview": "slidev build && slidev --port 3030"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.42.5",
+    "@slidev/theme-default": "^0.21.2",
+    "@slidev/theme-seriph": "^0.21.3",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.35.1",
+    "@types/node": "^18.16.19",
+    "typescript": "^5.1.6"
+  }
+}
