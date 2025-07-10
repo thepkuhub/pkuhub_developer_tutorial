@@ -16,7 +16,7 @@
 
 #set text(font: (
   (name: "Arial", covers: "latin-in-cjk"), // 西文字体
-  "微軟正黑體" // 中文字体
+  "DengXian" // 中文字体
 ), lang: "zh")
 
 #title-slide()

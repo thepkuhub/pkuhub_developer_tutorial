@@ -10,7 +10,6 @@
   - 暑假可选择参与某笔记平台的重构工作, 或其他项目
   #pause
   - 加入退出自由
-
   #pause
   #grid(
     columns: (1fr, 1fr),
@@ -49,9 +48,9 @@
   #pause
 现代技术栈呈现分层架构特征: #pause
 - 数据: 关系型数据库 (MySQL/PostgreSQL) , NoSQL (MongoDB/Redis) 
-- 后端: 运行 (Node.js/Python) , 框架 (Spring/Django) 
+- 后端: 运行 (Node.js/Python) , 框架 (Spring/Flask) 
 - 前端: 三件套 (HTML/CSS/JS) , 框架 (React/Vue) 
-- 通用工具链: 操作系统 (Linux/Windows) , 虚拟化 (Docker/K8s) , 版本控制 (Git) , 包管理 (npm/pip) , CI/CD (Jenkins) 
+- 通用工具链: 操作系统 (Linux/Windows) , 环境相关 (Docker/npm/pip) , 版本控制 (Git), ai辅助 (Copilot/Cursor)
 ]
 
 
@@ -62,15 +61,14 @@
 
 #slide[
 现代技术栈呈现分层架构特征: 
-- 数据: 关系型数据库 (MySQL/PostgreSQL) , NoSQL (MongoDB/Redis) 
+- 数据库: 关系型数据库 (MySQL/PostgreSQL) , NoSQL (MongoDB/Redis) 
 - 后端: 运行 (Node.js/Python) , 框架 (Spring/Django) 
 - 前端: 三件套 (HTML/CSS/JS) , 框架 (React/Vue) 
 - 通用工具链: 操作系统 (Linux/Windows) , 虚拟化 (Docker/K8s) , 版本控制 (Git) , 包管理 (npm/pip) , CI/CD (Jenkins) 
 
 原则: 
-1. 从需求出发
-2. 边做边学
-3. 大项目做阶段规划, 避免过度设计
+1. 边做边学, 按需学习
+2. 大项目做阶段规划, 避免过度设计
 ]
 
 == 信息
@@ -78,24 +76,23 @@
 #pause
 === 两面性
 #pause
-- 未知不可知 : 如果没有人告诉你某个工具好用, 你可能永远不会知道
+- 未知不可知 : 如果没有人告诉你某个工具好用, 你可能永远不会知道他的存在
 #pause
 - 已知不可逆 : 一旦接收某个信息, 就永远受其影响
 #pause
 === 认知局限与突破
 #pause
 - 信息茧房: 开发者常陷入技术舒适区, 例如: 
-  - 长期使用jQuery的开发者可能错过现代前端框架的组件化优势
-  - 只熟悉关系型数据库的设计师难以应对大数据场景
+  - 初学 latex 写数学公式疯狂查表, 却不知道有直接手写识别的网站 
 #pause
-- 选择与机会成本: 当同时接触Spring Boot和Quarkus时, 决策成本反而增加
+- 选择与机会成本: 同时接触多种框架时, 决策成本反而增加
 #pause
 
 === 技术债务的不可逆性
 #pause
-- 绑定诅咒: 选择Angular意味着接受其完整生态
+- 绑定诅咒: 选择 Angular / Django 意味着接受其完整生态
 #pause
-- 知识沉淀: 已掌握的Webpack配置思维影响对Vite的接受度
+- 知识沉淀: 长期使用 for-loop 循环, 在 pytorch 编程中理解 tensor 操作会变得困难
 ]
 == 学习曲线
 #slide[
@@ -112,7 +109,7 @@
       #pause
       相比于平缓且线性的课程学习, 开发技术栈的学习曲线更陡峭, 多样, 混乱
       #pause
-      === 广度
+      === 广度搜索
       #pause
       - 积累 : 有玩具到手就试一下
       #pause
@@ -120,7 +117,7 @@
       #pause
       - 切忌对教材, 教程硬啃 
       #pause
-      === 深度
+      === 深度搜索
       #pause
       - 优先官方文档
       #pause
@@ -183,6 +180,7 @@
 #slide[
   #pause
 - 安装 vscode & git, 拥有一个github账户
+#pause
 1. 确保你确实完成了以上工作: 
 
 ```bash
@@ -495,6 +493,10 @@ git push origin main
 
 == A repository 
 #slide[
+#grid(
+  columns: (20em, 1fr),  // 固定左栏宽度+右栏自适应
+  gutter: 1em,
+[
 #pause
 ```bash
 my-project/
@@ -509,28 +511,24 @@ my-project/
 ├── LICENSE              # 许可证
 └── requirements.txt / package.json    # 依赖
 ```
+],
+[
+#pause
+  === .gitignore 新手常见错误
+#pause
+- 暂存常用 ```bash git add .```
+#pause
+- 如果 .gitignore 中包含了某个文件, 那么这个文件不会被添加到暂存区
+#pause
+- 错误 : 如果你在 .gitignore 中添加了某个文件, 但之前已经跟踪过, 那么这个文件仍然会被跟踪. 
+#pause
+- 一般只要不使用 -f , 犯错都可以挽回
 ]
-
+)
+]
 = 下期预告 & 答疑环节
-#slide[
-  - 内容基础且偏实践, 最好可以跟上操作
-  - 帮助同学迅速掌握 xk 高年级的技术栈, 可以上手开发
-  - 暑假可选择参与某笔记平台的重构工作, 或其他项目
-  - 加入退出自由
-  #grid(
-    columns: (1fr, 1fr),
-    column-gutter: 1em,
-    [
-      === Tutorials Arrangement
-      - VS Code & Git : 徐靖
-      - Linux 与 Web 部署 : 神秘开发者1
-      - AI 辅助编程 : 神秘开发者2
-      - Rust 系列: ...
-    ],
-    [
-
-    ]
-  )
+#focus-slide[
+  #image("../images/404notfound.png")
 ]
 
 #focus-slide("Thanks!")
