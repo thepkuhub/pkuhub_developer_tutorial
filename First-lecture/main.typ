@@ -23,5 +23,4 @@
 
 #outline-slide()
 
-#include "sections/0.typ"
-#include "sections/1.typ"
+#include "sections/4.typ"
