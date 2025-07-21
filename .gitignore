@@ -9,7 +9,7 @@ yarn-error.log*
 # Build outputs
 dist/
 .slidev/
-
+rust-examples/target
 # Environment variables
 .env
 .env.local
