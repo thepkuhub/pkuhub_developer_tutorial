@@ -1,0 +1,22 @@
+[package]
+name = "rust-examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[[bin]]
+name = "01_data_declaration"
+path = "src/01_data_declaration.rs"
+
+[[bin]]
+name = "02_control_flow"
+path = "src/02_control_flow.rs"
+
+[[bin]]
+name = "03_code_organization"
+path = "src/03_code_organization.rs"
+
+[[bin]]
+name = "04_syntactic_sugar"
+path = "src/04_syntactic_sugar.rs"
