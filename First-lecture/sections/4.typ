@@ -166,8 +166,9 @@ pub fn eat_at_restaurant() {
     rust-analyzer会报错: fuction `add_to_waitlist` is private
     ],
     [ 
+    #pause
     Rust 出于安全的考虑，默认情况下，所有的类型都是私有化的，包括函数、方法、结构体、枚举、常量，是的，就连模块本身也是*私有化*的。
-    
+    #pause
     在 Rust 中，父模块完全无法访问子模块中的私有项，但是子模块却可以访问父模块、父父..模块的私有项。
     ]
 )
@@ -201,10 +202,8 @@ fn main() {
     需要在 lib.rs 中将模块声明为 pub
     ],
     [ 
-    === 使用super关键字调用父模块
-    
-
     #pause
+    === 使用super关键字调用父模块
     ```rust
 fn serve_order() {
     self::back_of_house::cook_order()
@@ -231,6 +230,7 @@ mod back_of_house {
 == 包 | Crate
 #slide[
   #image("../images/60.png", width: 100%, alt: "6")
+  #pause
   这里对应了两种不同的项目结构
   - 二进制 crate (Binary Crate)：生成一个可执行程序（有 main.rs 文件）。目的是运行。
   - 库 crate (Library Crate)：生成一个库，供其他程序调用（有 lib.rs 文件）。目的是被依赖。
@@ -544,6 +544,7 @@ Rust 中常见的语法糖：
     column-gutter: 1em,
     columns: ( 1fr, 18em), // 固定左栏宽度
     [
+    #pause
     ```Rust
     fn main() {
       let r;              // -------+--'a
@@ -556,12 +557,14 @@ Rust 中常见的语法糖：
       println!("r: {r}"); //        |
     }                     // -------+
     ```
+    #pause
     r 和 x 的生命周期注解，分别叫做 'a 和 'b。
 
     程序被拒绝编译，因为生命周期 'b 比生命周期 'a 要小：被引用的对象比它的引用者存在的时间更短。
     ]
     ,
     [
+    #pause
     ```Rust
     fn main() {
       let x = 5;         // --------+--'b
@@ -572,8 +575,10 @@ Rust 中常见的语法糖：
                          // --+     |
     }                    // --------+
     ```
+    #pause
     一个有效的引用，因为数据比引用有着更长的生命周期。
 
+    #pause
     *大部分时候生命周期是隐含并可以推断的，正如大部分时候类型也是可以推断的一样。*
     ]
   )
@@ -581,6 +586,7 @@ Rust 中常见的语法糖：
 #slide[
   #pause
   Rust 中的每一个引用都有其生命周期（lifetime），也就是引用保持有效的作用域。
+
   #pause
   类似于当因为有多种可能类型的时候必须注明类型，也会出现引用的生命周期以一些不同方式相关联的情况，所以 Rust 需要我们使用泛型生命周期参数来注明它们的关系，这样就能确保运行时实际使用的引用绝对是有效的。
 
@@ -729,6 +735,7 @@ Rust 中常见的语法糖：
     #pause
     === 相比于c++, 优势在哪
     `Box<T>` 类型是一个智能指针，因为它实现了 Deref trait，它允许 `Box<T>` 值被当作引用对待。
+    
     #pause
     当 `Box<T>` 值离开作用域时，由于 `Box<T>` 类型 Drop trait 的实现，box 所指向的堆数据也会被清除。
     ]
