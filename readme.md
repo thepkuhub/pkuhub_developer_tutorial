@@ -1,5 +1,18 @@
 # PKUHUB Developer Tutorial
 PKUHUB 内部开发技术讲座 slides
+
+## 讲座目录
+
+| 讲座 | 主题 | 讲者 |
+|------|------|------|
+| Lecture 1 | VS Code & Git 基础 | xj |
+| Lecture 2 | Web 部署实践 | - |
+| Lecture 3 | AI 编程与 Rust 入门 | - |
+| Lecture 4 | Rust 基础（上） | - |
+| Lecture 5 | React 前端开发 | - |
+| Lecture 6 | Rust 进阶（下） | ICUlizhi |
+| Lecture 7 | LLM 深度解析：从训练到推理 | PKUHUB |
+
 ___
 ## 讲者请看
 推荐 Tinymist Typst , Typst Companion 两款 vscode 插件
@@ -23,3 +36,4 @@ ___
 工作界面belike:
 ![alt text](images/image.png)
 ___
+
