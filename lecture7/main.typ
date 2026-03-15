@@ -4,7 +4,8 @@
 #show: dewdrop-theme.with(
   aspect-ratio: "16-9",
   footer: self => self.info.institution,
-  navigation: "slides",
+  navigation: "none",
+  config-common(new-section-slide-fn: none),
   config-info(
     title: [PKUHUB Developer Tutorial : LLM深度解析],
     subtitle: [基础设施 | 推理与Agent | 评测体系 | 训练vs学习],
@@ -14,10 +15,13 @@
   ),
 )
 
-#set text(font: (
-  (name: "Arial", covers: "latin-in-cjk"), // 西文字体
-  "DengXian" // 中文字体
-), lang: "zh")
+#set text(
+  font: (
+    "Noto Sans CJK SC",  // 中文字体（思源黑体，替代 DengXian）
+    "DejaVu Sans"        // 西文字体（替代 Arial）
+  ),
+  lang: "zh"
+)
 
 #title-slide()
 

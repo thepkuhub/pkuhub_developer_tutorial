@@ -1,5 +1,178 @@
 #import "../globals.typ": *
 
+= 我们总是在低估人工智能
+
+== 2025：AI 已经能做什么？
+
+#slide[
+  #heading(level: 3)[超越预期的现实]
+
+  今天我们看到的 AI 能力，5 年前被认为是"科幻"：
+
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold", blue)[编程开发]
+      - 独立开发完整应用
+      - 调试复杂系统 Bug
+      - 跨语言重构代码
+      - 通过顶级编程竞赛
+
+      #v(0.3em)
+      #text(weight: "bold", blue)[科学研究]
+      - 辅助数学定理证明
+      - 设计新材料分子
+      - 分析实验数据
+      - 撰写学术论文
+    ],
+    [
+      #text(weight: "bold", blue)[创意工作]
+      - 生成商业级设计
+      - 创作音乐和剧本
+      - 制作视频内容
+      - 构建 3D 场景
+
+      #v(0.3em)
+      #text(weight: "bold", blue)[复杂推理]
+      - 多步骤战略规划
+      - 实时决策优化
+      - 跨领域知识整合
+      - 长期目标执行
+    ],
+  )
+
+  #v(0.5em)
+
+  #align(center)[
+    #text(green, weight: "bold")[而这些，仍然只是开始...]
+  ]
+]
+
+== 案例：FARS 全自动科研系统 (2024)
+
+#slide[
+  #heading(level: 3)[端到端 AI 研究流水线 — Analemma.ai]
+
+  #v(0.5em)
+
+  // 架构图占位
+  // #image("../images/fars.png", width: 80%)
+
+  #v(0.5em)
+
+  FARS = Fully Autonomous Research System
+
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold")[四大智能体]
+      - Ideation: 文献调研与假设生成
+      - Planning: 实验设计与方法选择
+      - Experiment: 代码执行与数据分析
+      - Writing: 论文撰写与 LaTeX 导出
+    ],
+    [
+      #text(weight: "bold")[直播成果]
+      - 228 小时连续运行
+      - 生成 244 个研究假设
+      - 产出 100 篇学术论文草稿
+      - 单篇成本约 \$1,000
+    ],
+  )
+
+  #v(0.5em)
+
+  #align(center)[
+    #text(gray)[Source: analemma.ai/fars]
+  ]
+]
+
+== 案例：Claude Code (2024)
+
+#slide[
+  #heading(level: 3)[Anthropic 的 Agentic 编程工具]
+
+  #v(0.5em)
+
+  // 架构图占位
+  // #image("../images/claude_code.png", width: 80%)
+
+  #v(0.5em)
+
+  不是代码补全，而是端到端完成开发任务：
+
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold")[核心能力]
+      - 理解大型代码库
+      - 自主读写文件
+      - 执行命令和测试
+      - 多步骤任务规划
+    ],
+    [
+      #text(weight: "bold")[技术突破]
+      - Agent RL 训练
+      - 工具一体化（非外挂）
+      - 环境感知反馈循环
+      - 长链条任务执行
+    ],
+  )
+
+  #v(0.5em)
+
+  #align(center)[
+    标志着 AI 从 "Copilot" 进化为 "Coder"
+  ]
+]
+
+== 案例：OpenCLAW 多 Agent 框架 (2024)
+
+#slide[
+  #heading(level: 3)[个人 AI 助手的基础设施]
+
+  #v(0.5em)
+
+  // 架构图占位
+  // #image("../images/openclaw.png", width: 80%)
+
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold", blue)[核心特性]
+      - 本地运行的多 Agent 系统
+      - 支持 20+ 渠道 (Slack/Discord/Telegram)
+      - Hub-and-Spoke 架构设计
+      - 180K+ GitHub Stars
+    ],
+    [
+      #text(weight: "bold", blue)[技术亮点]
+      - Gateway 控制平面
+      - Agent Runtime (Pi Core)
+      - 内存与工具沙箱
+      - 会话路由与队列管理
+    ],
+  )
+
+  #v(0.5em)
+
+  #align(center)[
+    AI 从"聊天工具"进化为"数字员工"
+  ]
+]
+
 = LLM工业构成
 
 == 三个核心方向
@@ -286,26 +459,28 @@
   )
 ]
 
-== CoT：为什么有效？
-
-#slide[
-  #heading(level: 3)[把跳跃变成漫步]
-
-  复杂问题的解答往往需要多步推理。
-  但模型默认是"跳跃式"的，容易出错。
+#focus-slide[
+  CoT 的本质：把跳跃变成漫步
 
   #v(1em)
 
-  CoT的本质：
-  - 把隐式推理外显化
-  - 每步都可验证
-  - 出错时可以定位
+  #text(size: 0.8em)[
+    复杂问题的解答需要多步推理
+  ]
 
   #v(1em)
 
-  魔法咒语：加一句 "Let's think step by step"
+  #text(size: 0.7em)[
+    隐式推理 → 外显化
+    
+    每步可验证、出错可定位
+  ]
 
-  甚至Zero-shot也能激发推理能力！
+  #v(1em)
+
+  #text(size: 0.6em, gray)[
+    魔法咒语："Let's think step by step"
+  ]
 ]
 
 == ReAct：推理与行动结合
@@ -637,10 +812,10 @@
 
 = LLM训练方法详解
 
-== SFT：模仿老师的言行
+== SFT：模仿老师的言行 (2019+)
 
 #slide[
-  #heading(level: 3)[监督微调：背诵标准答案]
+  #heading(level: 3)[监督微调：背诵标准答案 — BERT/GPT-2 时期]
 
   SFT就像让学生背诵优秀作文范文：
   ```json
@@ -657,10 +832,10 @@
   但这只是模仿，模型并不理解什么是"好回答"。
 ]
 
-== RLHF：学会审美
+== RLHF：学会审美 (2022)
 
 #slide[
-  #heading(level: 3)[InstructGPT：从模仿到偏好]
+  #heading(level: 3)[InstructGPT：从模仿到偏好 — ChatGPT 的核心技术]
 
   #align(center)[
     #text(gray)[图片描述：InstructGPT论文中的RLHF流程图]
@@ -731,10 +906,115 @@
   )
 ]
 
-== RLVR：用对错代替喜好
+#focus-slide[
+  为什么 RL 和深度学习不同？
+
+  #v(1em)
+
+  #text(size: 0.8em)[
+    深度学习：推理过程连续可导
+    
+    $ L = f_theta(x) -> "backprop" -> nabla_theta L $
+  ]
+
+  #v(1em)
+
+  #text(size: 0.8em)[
+    RL：环境非可导，只能采样估计
+    
+    $ R = sum gamma^t r_t <- "环境反馈" <- "不可导黑盒" $
+  ]
+
+  #v(1em)
+
+  核心挑战：
+  #text(weight: "bold")[信用分配 (Credit Assignment)]
+  
+  哪个动作导致了最终的奖励？
+]
+
+== RL 基础：On-Policy vs Off-Policy
 
 #slide[
-  #heading(level: 3)[RLVR：可验证奖励的强化学习]
+  #heading(level: 3)[策略梯度与采样效率]
+
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold")[On-Policy (e.g., PPO)]
+      
+      只能用当前策略采集的数据更新
+      
+      #v(0.3em)
+      
+      $ theta_(t+1) = theta_t + alpha nabla J(theta_t) $
+      
+      #v(0.3em)
+      
+      - 数据用一次就丢
+      - 采样效率低
+      - 但稳定性高
+    ],
+    [
+      #text(weight: "bold")[Off-Policy (e.g., DQN)]
+      
+      可以用旧策略采集的数据
+      
+      #v(0.3em)
+      
+      重要性采样修正：
+      $ E_(pi_theta)[f] = E_(pi_theta')[f dot (pi_theta)/(pi_theta')] $
+      
+      #v(0.3em)
+      
+      - 数据可复用
+      - 采样效率高
+      - 但方差大
+    ],
+  )
+
+  #v(0.5em)
+
+  #align(center)[
+    LLM 用 PPO：追求稳定性，采样成本相对训练成本可接受
+  ]
+]
+
+== PPO：Proximal Policy Optimization
+
+#slide[
+  #heading(level: 3)[TRPO 的实用化改进]
+
+  #v(0.5em)
+
+  PPO 解决策略梯度的核心问题：
+  更新步长不能太大，否则策略崩溃
+
+  #v(0.5em)
+
+  #text(weight: "bold")[Clip 目标函数：]
+
+  $ L^"CLIP" (theta) = E_t [min(r_t(theta) A_t, "clip"(r_t(theta), 1-epsilon, 1+epsilon) A_t)] $
+
+  其中 $r_t(theta) = pi_theta(a_t|s_t) / pi_(theta_"old")(a_t|s_t)$ 是重要性采样比率
+
+  #v(0.5em)
+
+  #text(weight: "bold")[KL 惩罚项（RLHF 中常用）：]
+
+  $ L = L^"CLIP" - beta dot D_"KL" (pi_theta || pi_"ref") $
+
+  防止优化后的策略偏离原始模型太远
+]
+
+
+== RLVR：用对错代替喜好 (2025)
+
+#slide[
+  #heading(level: 3)[RLVR：可验证奖励的强化学习 — DeepSeek-R1 的核心技术]
 
   RLHF的问题：需要人工标注偏好，主观且昂贵。
 
@@ -790,34 +1070,188 @@
   ```
 ]
 
-== 后训练方法对比
+
+== Agent RL：从推理到行动 (2024)
 
 #slide[
-  #heading(level: 3)[三种方法的直观对比]
+  #heading(level: 3)[RLVR vs Agent RL — Claude Code 的核心技术]
 
-  #table(
-    columns: (1fr, 2fr, 2fr),
-    inset: 0.8em,
-    table.header(
-      [#text(weight: "bold")[方法]],
-      [#text(weight: "bold")[直观理解]],
-      [#text(weight: "bold")[代表工作]],
-    ),
-    [SFT],
-    [背诵优秀作文],
-    [基础对话训练],
-    [RLHF/DPO],
-    [学习审美品味],
-    [InstructGPT (2022)],
-    [RLVR],
-    [做题对答案],
-    [DeepSeek-R1 (2025)],
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold")[RLVR (DeepSeek-R1, 2025)]
+      
+      - 状态：问题文本
+      - 动作：生成答案
+      - 奖励：答案正确性
+      
+      #v(0.3em)
+      
+      解决"做题"问题
+    ],
+    [
+      #text(weight: "bold", blue)[Agent RL (Claude Code, 2024)]
+      
+      - 状态：环境观察（文件、输出、错误）
+      - 动作：工具调用（read/write/exec）
+      - 奖励：任务完成度
+      
+      #v(0.3em)
+      
+      解决"干活"问题
+    ],
   )
 
   #v(1em)
 
-  实际往往组合使用：
-  SFT打基础 → RLHF/DPO学审美 → RLVR练专项
+  Agent RL 的关键：
+  #align(center)[
+    动作空间扩展为 #text(blue)[Observation -> Thought -> Action] 的完整 MDP
+  ]
+]
+
+== Agent RL：分离式 vs 一体化训练
+
+#slide[
+  #heading(level: 3)[Cursor (2023) vs Claude Code (2024)]
+
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold", red)[分离式 (Cursor)]
+      
+      Base LLM -> Tool Fine-tuning -> API 调用
+      
+      #v(0.5em)
+      
+      - 工具调用是"外挂"
+      - 调用时机靠启发式
+      - 无法端到端优化
+    ],
+    [
+      #text(weight: "bold", green)[一体化 (Claude Code)]
+      
+      Pretrain + Agent RL end-to-end
+      
+      #v(0.5em)
+      
+      - 工具是"感官"
+      - 自主学习调用策略
+      - 任务完成度直接优化
+    ],
+  )
+
+  #v(1em)
+
+  #align(center)[
+    核心差异：#text(red)[post-hoc 添加] vs #text(green)[native 能力]
+  ]
+]
+
+== Agent RL：工具泛化
+
+#slide[
+  #heading(level: 3)[In-Context Tool Learning]
+
+  #v(0.5em)
+
+  #table(
+    columns: (1fr, 2fr, 2fr),
+    inset: 0.7em,
+    table.header(
+      [#text(weight: "bold")[Level]],
+      [#text(weight: "bold")[Capability]],
+      [#text(weight: "bold")[Example]],
+    ),
+    [L1 Tool Use],
+    [Invoke seen tools correctly],
+    [GPT-4 with Code Interpreter (2023)],
+    [L2 Tool Composition],
+    [Combine tools for new tasks],
+    [Claude Code (2024)],
+    [L3 Tool Generalization],
+    [Learn new tools from docs],
+    [OpenAI Operator (2025)],
+  )
+
+  #v(0.5em)
+
+  #align(center)[
+    趋势：从 #text(gray)[API 调用] 到 #text(blue)[Environment-native training]
+  ]
+]
+
+== 蒸馏：小模型学大模型 (2019+)
+
+#slide[
+  #heading(level: 3)[知识蒸馏与模型压缩]
+
+  #v(0.5em)
+
+  蒸馏的本质：让小模型（Student）模仿大模型（Teacher）的行为
+
+  #v(0.5em)
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 2em,
+    [
+      #text(weight: "bold")[输出层蒸馏]
+      
+      学习软标签（概率分布）：
+      $ L = - sum p_"teacher" log p_"student" $
+      
+      #v(0.3em)
+      
+      代表：DistilBERT (2019)
+      压缩率：BERT 340M → 66M
+    ],
+    [
+      #text(weight: "bold")[中间层蒸馏]
+      
+      学习隐藏状态、注意力矩阵
+      
+      #v(0.3em)
+      
+      代表：MiniLLM, TinyLlama
+      效果：7B → 1B 保持 90%+ 能力
+    ],
+  )
+
+  #v(0.5em)
+
+  #align(center)[
+    应用场景：端侧部署、低延迟推理、成本敏感场景
+  ]
+]
+
+== 后训练方法总结
+
+#slide[
+  #heading(level: 3)[从模仿到自主的演进]
+
+  #v(0.5em)
+
+  - #text(weight: "bold")[SFT (2019+)]：BERT/GPT-2 时期，模仿标准答案
+  - #text(weight: "bold")[RLHF (2022)]：InstructGPT/ChatGPT，学习人类偏好
+  - #text(weight: "bold")[DPO (2023)]：Mistral/Zephyr，直接偏好优化
+  - #text(weight: "bold")[蒸馏 (贯穿)]：DistilBERT/MiniLLM，模型压缩
+  - #text(weight: "bold")[Agent RL (2024)]：Claude Code，工具一体化
+  - #text(weight: "bold")[RLVR (2025)]：DeepSeek-R1，可验证奖励
+
+  #v(0.5em)
+
+  #align(center)[
+    实际往往组合使用：
+    
+    SFT 打基础 → RLHF/DPO 学审美 → RLVR/Agent RL 练专项 → 蒸馏压缩部署
+  ]
 ]
 
 = LLM训练 vs 人类学习
@@ -853,37 +1287,51 @@
   但这个类比有其局限性。
 ]
 
-== 本质的差异
+#focus-slide[
+  LLM vs 人类：根本不同
 
-#slide[
-  #heading(level: 3)[LLM vs 人类：根本不同]
+  #v(1em)
 
   #grid(
     columns: (1fr, 1fr),
     gutter: 3em,
     [
-      #text(weight: "bold")[LLM]
-      - 需要#text(red)[海量数据]
-      - 学了新可能#text(red)[忘记旧]
-      - 只懂#text(red)[统计相关]
-      - 没有#text(red)[真正理解]
-      - 不会#text(red)[主动探索]
+      #text(size: 0.7em)[
+        #text(weight: "bold", red)[LLM]
+        
+        海量数据
+        
+        学了新可能忘记旧
+        
+        统计相关
+        
+        无真正理解
+        
+        不会主动探索
+      ]
     ],
     [
-      #text(weight: "bold")[人类]
-      - #text(blue)[少量例子]举一反三
-      - #text(blue)[终身学习]不断累积
-      - 理解#text(blue)[因果关系]
-      - 有#text(blue)[意识和体验]
-      - #text(blue)[主动探索]世界
+      #text(size: 0.7em)[
+        #text(weight: "bold", blue)[人类]
+        
+        少量例子举一反三
+        
+        终身学习
+        
+        因果推理
+        
+        意识与体验
+        
+        主动探索
+      ]
     ],
   )
 
-  #v(1.5em)
+  #v(1em)
 
-  当前LLM是"超级记忆者"而非"真正理解者"。
-
-  通往AGI需要：感知、行动、因果推理、世界模型。
+  #text(size: 0.6em)[
+    LLM 是"超级记忆者"而非"真正理解者"
+  ]
 ]
 
 = 结语
