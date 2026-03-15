@@ -7,11 +7,11 @@
   navigation: "none",
   config-common(new-section-slide-fn: none),
   config-info(
-    title: [PKUHUB Developer Tutorial : LLM深度解析],
+    title: [Plib Developer Tutorial : LLM深度解析],
     subtitle: [基础设施 | 推理与Agent | 评测体系 | 训练vs学习],
-    author: [PKUHUB],
+    author: [Plib],
     date: datetime.today(),
-    institution: [PKUHUB],
+    institution: [Plib],
   ),
 )
 

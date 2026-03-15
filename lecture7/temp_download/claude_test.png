@@ -1,0 +1,7 @@
+{
+  "sys": {
+    "type": "Error",
+    "id": "NotFound"
+  },
+  "message": "The resource could not be found."
+}
